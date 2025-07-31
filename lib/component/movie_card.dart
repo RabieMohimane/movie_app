@@ -3,10 +3,10 @@ import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/pages/movie_details.dart';
 
 class MovieCard extends StatelessWidget {
-  const MovieCard({super.key, required this.movie,this.hideButton = false });
+  const MovieCard({super.key, required this.movie,this.isDetails = false });
 
   final Movie movie;
-  final bool hideButton;
+  final bool isDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,8 @@ class MovieCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                if (!hideButton)
+                if (!isDetails
+            )
                   TextButton(
                     onPressed: () => {
                       Navigator.push(
